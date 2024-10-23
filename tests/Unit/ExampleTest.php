@@ -2,15 +2,20 @@
 
 namespace Tests\Unit;
 
-use PHPUnit\Framework\TestCase;
+use Tests\TestCase;
+use App\Models\Calculadora;
 
 class ExampleTest extends TestCase
 {
     /**
      * A basic test example.
      */
-    public function test_that_true_is_true(): void
+    public function test_suma(): void
     {
-        $this->assertTrue(true);
+        $cal = new Calculadora();
+
+        $result = $cal->sumar(2, 3);
+
+        $this->assertEquals(5, $result);
     }
 }
